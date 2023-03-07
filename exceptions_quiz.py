@@ -1,44 +1,8 @@
 """
 Nicole Hsu A01340726
-<<<<<<< HEAD
-Muyang LI
+Muyang Li A01352306
 """
 
-
-def check_password_strength(password):
-    isUpper = False
-    isLower = False
-    isEight = False
-    isDigit = False
-    index = 1
-    for letter in password:
-        index += 1
-        if letter.isupper() == True:
-            isUpper = True
-            break
-    for letter in password:
-        if letter.islower == True:
-            islower = True
-            break
-    for letter in password:
-        if letter.isdigit() == True:
-            isDigit = True
-            break
-    if index >= 8:
-        isEight = True
-    if isUpper is False:
-        raise ValueError('password needs upperCase')
-    elif isLower is False:
-        raise ValueError('password needs lowerCase')
-    elif isEight is False:
-        raise ValueError('password should be 8 characters or more')
-    elif isDigit is False:
-        raise ValueError('password needs 1 digit')
-    else:
-        print("password Corrtect")
-
-=======
-"""
 
 def check_password_strength(password):
     """
@@ -51,7 +15,9 @@ def check_password_strength(password):
     :param password: a string
     :precondition: password must be a string
     :postcondition: correctly asserts that the given password is strong or not
-    :return: True if the password is strong, False otherwise, as a boolean
+    :return: True if the password is strong
+    :raises ValueError: if password does not meet the strength requirements
+
 
     >>> check_password_strength("Hell0W0rld")
     True
@@ -60,17 +26,44 @@ def check_password_strength(password):
     >>> check_password_strength("ASDFjkl0")
     True
     """
->>>>>>> 96ade170ec20d3f6c84fb93c117487611871bb88
+
+    is_upper = False
+    is_lower = False
+    is_eight = False
+    is_digit = False
+    index = 1
+    for letter in password:
+        index += 1
+        if letter.isupper():
+            is_upper = True
+            break
+    for letter in password:
+        if letter.islower():
+            is_lower = True
+            break
+    for letter in password:
+        if letter.isdigit():
+            is_digit = True
+            break
+    if len(password) >= 8:
+        is_eight = True
+    if is_upper is False:
+        raise ValueError('password needs upperCase letter')
+    elif is_lower is False:
+        raise ValueError('password needs lowerCase letter')
+    elif is_eight is False:
+        raise ValueError('password should be 8 characters or more')
+    elif is_digit is False:
+        raise ValueError('password needs a digit')
+    else:
+        return True
 
 
 def main():
     """
     Drives the program.
     """
-<<<<<<< HEAD
-    check_password("wda1")
-=======
->>>>>>> 96ade170ec20d3f6c84fb93c117487611871bb88
+
 
 if __name__ == "__main__":
     main()
