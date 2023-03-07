@@ -10,7 +10,7 @@ def check_password_strength(password):
 
     This function checks the strength of the given password. This function considers a password strong if it contains
     at least 8 characters, has at least one uppercase letter, one lowercase letter, and at least one digit.
-    If the password is deemed strong, this function returns True, otherwise False, as a boolean.
+    If the password is deemed strong, this function returns True, otherise raises a ValueError.
 
     :param password: a string
     :precondition: password must be a string
